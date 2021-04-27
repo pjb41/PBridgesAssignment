@@ -16,8 +16,9 @@ def generate_handles(labels, colors, edge='k', alpha=1):
         handles.append(mpatches.Rectangle((0, 0), 1, 1, facecolor=colors[i % lc], edgecolor=edge, alpha=alpha))
     return handles
 
+plt.ion()
 
-seadef = gpd.read_file('Data/Flood_Map_for_Planning_Rivers_and_Sea_Areas_Benefiting_from_Flood_Defences.shp')
+seadef = gpd.read_file('Data/seadef_sel.shp')
 dtm = gpd.read_file('Data/Raster_tr35_dt3.shp')
 myFig = plt.figure(figsize=(10, 10))
 
