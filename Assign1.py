@@ -28,6 +28,13 @@ print(points1.crs)
 
 
 
+myFig = plt.figure(figsize=(25, 25))
+
+myCRS = ccrs.UTM(31)
+
+ax = plt.axes(projection=ccrs.Mercator(31))
+
+
 
 
 
