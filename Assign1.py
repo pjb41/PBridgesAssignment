@@ -1,5 +1,6 @@
 
-
+# load the modules required for this exercise, depending on sources of data (vector or raster).
+# You can also import Polygon in addition to Point from shapely.geometry.
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
@@ -11,12 +12,13 @@ import numpy as np
 import matplotlib.lines as mlines
 from shapely.geometry import Point
 
+# make the plot interactive.
 plt.ion()
 
 
 
 
-
+# load the required datasets. In this instance we have used 3 vector shapefiles and 2 csv sheets.
 seadef = gpd.read_file('Data/seadef_sel.shp')
 dtm = gpd.read_file('Data/Raster_tr35_dt3.shp')
 points1 = gpd.read_file('Data/points1.shp')
@@ -24,14 +26,14 @@ settlement = gpd.read_file('Data/settlement_xy.csv')
 seadefpoints = gpd.read_file('Data/seadef_points.csv')
 
 
-
+# display the Co-ordinate reference system (CRS) information here to ensure all datasets have identical information.
 print(seadef.crs)
 print(dtm.crs)
 print(points1.crs)
 
 
-
-myFig = plt.figure(figsize=(10, 10))
+# create a figure of size 12x12 (based in inches)
+myFig = plt.figure(figsize=(12, 12))
 
 myCRS = ccrs.UTM(31)
 
