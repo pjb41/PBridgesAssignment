@@ -1,4 +1,5 @@
 
+
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
@@ -30,7 +31,7 @@ print(points1.crs)
 
 
 
-myFig = plt.figure(figsize=(25, 25))
+myFig = plt.figure(figsize=(10, 10))
 
 myCRS = ccrs.UTM(31)
 
@@ -61,12 +62,7 @@ end_feature = mpatches.Patch(color='red', label='Settlements')
 
 plt.legend(handles=[top_feature, inset_feature, end_feature], fontsize=12, title="LEGEND")
 
-gridlines = ax.gridlines(draw_labels=True,
-                         xlocs=[1.34, 1.35, 1.36, 1.37, 1.38, 1.39],
-                         ylocs=[51.21, 51.22, 51.23, 51.24, 51.25, 51.26])
 
-gridlines.left_labels = False
-gridlines.bottom_labels = False
 ax.set_extent([xmin, xmax, ymin, ymax], crs=myCRS)
 
 def scale_bar(ax, location=(0.92, 0.95)):
@@ -104,8 +100,6 @@ points_df = points_df.to_crs('EPSG:27700')
 points_df2 = points_df.shift()
 points_df.distance(points_df2)
 print(points_df.distance(points_df2))
-
-
 
 
 
