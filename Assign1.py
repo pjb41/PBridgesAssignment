@@ -22,7 +22,9 @@ plt.ion()
 seadef = gpd.read_file('Data/seadef_sel.shp')
 dtm = gpd.read_file('Data/Raster_tr35_dt3.shp')
 points1 = gpd.read_file('Data/points1.shp')
+
 settlement = gpd.read_file('Data/settlement_xy.csv')
+
 seadefpoints = gpd.read_file('Data/seadef_points.csv')
 
 
@@ -35,9 +37,12 @@ print(points1.crs)
 # create a figure of size 12x12 (based in inches)
 myFig = plt.figure(figsize=(12, 12))
 
+# Create a Universal Transverse Mercator reference system to transfrom the data. In this case for the East of UK we use 31.
+# To find the UTM for your desired location go to : https://mangomap.com/robertyoung/maps/69585/what-utm-zone-am-i-in-#
 myCRS = ccrs.UTM(31)
 
-ax = plt.axes(projection=ccrs.Mercator(31))
+# Create an axis object in the figure using a Mercator projection, where we can actually plot our data
+ax = plt.axes(projection=ccrs.Mercator())
 
 
 top_feature = ShapelyFeature(dtm['geometry'], myCRS, edgecolor='black', facecolor='w')
@@ -50,7 +55,8 @@ ax.set_extent([xmin, xmax, ymin, ymax], crs=myCRS)
 inset_feature = ShapelyFeature(seadef['geometry'], myCRS, edgecolor='blue', facecolor='CornflowerBlue')
 xmin, ymin, xmax, ymax = seadef.total_bounds
 ax.add_feature(inset_feature)
-alpha = 1
+
+ax.set_extent([xmin, xmax, ymin, ymax], crs=myCRS)
 
 end_feature = ax.plot(points1.geometry.x, points1.geometry.y, 's', color='red', ms=10, transform=myCRS)
 
