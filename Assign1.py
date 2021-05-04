@@ -34,8 +34,8 @@ print(dtm.crs)
 print(points1.crs)
 
 
-# create a figure of size 25x25 (based in inches)
-myFig = plt.figure(figsize=(25, 25))
+# create a figure of size 16x16 (based in inches)
+myFig = plt.figure(figsize=(16, 16))
 
 # Create a Universal Transverse Mercator reference system to transfrom the data.
 # In this case for the East of UK we use 31.
@@ -79,7 +79,7 @@ plt.legend(handles=[top_feature, inset_feature, end_feature], fontsize=12, title
 
 
 # Design a scale bar for a length of 5km to go in the top right corner of your map.
-def scale_bar(ax, location=(0.92, 0.95)):
+def scale_bar(ax, location=(0.96, 0.96)):
     llx0, llx1, lly0, lly1 = ax.get_extent(ccrs.PlateCarree())
     sbllx = (llx1 + llx0) / 2
     sblly = lly0 + (lly1 - lly0) * location[1]
