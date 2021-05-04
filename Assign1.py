@@ -34,8 +34,8 @@ print(dtm.crs)
 print(points1.crs)
 
 
-# create a figure of size 12x12 (based in inches)
-myFig = plt.figure(figsize=(12, 12))
+# create a figure of size 25x25 (based in inches)
+myFig = plt.figure(figsize=(25, 25))
 
 # Create a Universal Transverse Mercator reference system to transfrom the data.
 # In this case for the East of UK we use 31.
