@@ -3,10 +3,10 @@
 
 Steps required to obtain the code and be able to utilise it for your own projects.
 
-1. Getting started
+# 1. Getting started
 To get started with the exercises, you'll need to install both git and conda on your computer. 
 
-2. Download/clone this repository
+# 2. Download/clone this repository
 Once you have these installed, clone this repository to your computer by doing one of the following things:
 
 Open GitHub Desktop and select File > Clone Repository. Select the URL tab, then enter the URL for this repository.
@@ -20,4 +20,4 @@ To do this, use the environment.yml file provided in the repository. If you have
 
 Otherwise, you can open a command prompt (on Windows, you may need to select an Anaconda command prompt). Navigate to the folder where you cloned this repository and run the following command:
 
-C:\Users\pjb41\PBridgesAssignment conda env create -f environment.yml
+C:\Users\*YOURREPOSITORYFOLDER* conda env create -f environment.yml
