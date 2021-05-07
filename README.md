@@ -21,3 +21,5 @@ To do this, use the environment.yml file provided in the repository. If you have
 Otherwise, you can open a command prompt (on Windows, you may need to select an Anaconda command prompt). Navigate to the folder where you cloned this repository and run the following command:
 
 C:\Users\*YOURREPOSITORYFOLDER* conda env create -f environment.yml
+
+The code is found in the Assign1.py file above and the code is also replicated within a Jupyter Notebook above (where the map can be run and displayed. 
