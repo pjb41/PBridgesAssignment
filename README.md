@@ -22,4 +22,4 @@ Otherwise, you can open a command prompt (on Windows, you may need to select an 
 
 C:\Users\*YOURREPOSITORYFOLDER* conda env create -f environment.yml
 
-The code is found in the Assign1.py file above and the code is also replicated within a Jupyter Notebook above (where the map can be run and displayed. 
+The code is found in the Assign1.py file above and the code is also replicated within a Jupyter Notebook above (Assign_workings.ipynb) where the code can also be run and the map displayed. 
