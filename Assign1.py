@@ -34,8 +34,8 @@ print(dtm.crs)
 print(points1.crs)
 
 
-# create a figure of size 16x16 (based in inches)
-myFig = plt.figure(figsize=(16, 16))
+# create a figure of size 25x25 (based in inches)
+myFig = plt.figure(figsize=(25, 25))
 
 # Create a Universal Transverse Mercator reference system to transfrom the data.
 # In this case for the East of UK we use 31.
@@ -57,7 +57,7 @@ ax.set_extent([xmin, xmax, ymin, ymax], crs=myCRS)
 # We are adding our sea defences polygon data onto the topography data again using ShapelyFeature.
 # Here we are using a blue outline with a Cornflower Blue fill.
 inset_feature = ShapelyFeature(seadef['geometry'], myCRS, edgecolor='blue', facecolor='CornflowerBlue')
-xmin, ymin, xmax, ymax = dtm.total_bounds
+xmin, ymin, xmax, ymax = seadef.total_bounds
 ax.add_feature(inset_feature)
 
 
@@ -79,7 +79,7 @@ plt.legend(handles=[top_feature, inset_feature, end_feature], fontsize=12, title
 
 
 # Design a scale bar for a length of 5km to go in the top right corner of your map.
-def scale_bar(ax, location=(0.96, 0.96)):
+def scale_bar(ax, location=(0.92, 0.95)):
     llx0, llx1, lly0, lly1 = ax.get_extent(ccrs.PlateCarree())
     sbllx = (llx1 + llx0) / 2
     sblly = lly0 + (lly1 - lly0) * location[1]
