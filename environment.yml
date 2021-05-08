@@ -1,4 +1,4 @@
-name: egm722
+name: PBridgesAssignment
 channels:
   - conda-forge
   - defaults
@@ -9,4 +9,4 @@ dependencies:
   - notebook=6.2.0
   - rasterio=1.2.0
   - fiona=1.8.18
-prefix: C:\Users\e16006469\Anaconda3\envs\egm722
+prefix: C:\Users\wells\Anaconda3\envs\egm722
